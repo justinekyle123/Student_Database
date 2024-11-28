@@ -17,7 +17,16 @@
      $user = $con->query($sql) or die ($con->error);
      $row = $user->fetch_assoc();
 
-    echo $total = $user->num_rows;
+     $total = $user->num_rows;
+
+    if($total > 0){
+        $_SESSION['UserLogin'] = $row['username'];
+        $_SESSION['Access'] = $row['access'];
+
+        echo header("Location: index.php");
+    }else{
+        echo "no user found";
+    }
 
     }
 ?>
