@@ -14,8 +14,10 @@
     include_once("connections/connections.php");
     
     $con = connection();
+
+    $id =  $_GET['ID'];
     
-    $sql = "SELECT * FROM student_list";
+    $sql = "SELECT * FROM student_list WHERE id = '$id' " ;
     $students = $con->query($sql) or die ($con->error);
     $row = $students->fetch_assoc();
 
@@ -32,6 +34,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <h2><?php echo $row['first_name'];?> <?php echo $row['last_name'];?></h2>
 </body>
 </html>

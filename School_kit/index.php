@@ -50,7 +50,7 @@
         <tbody>
             <?php do{ ?>
             <tr>
-                <td><a href="details.php">view</a></td>
+                <td><a href="details.php?ID=<?php echo $row['id']; ?>">view</a></td>
                 <td><?php echo $row['first_name']; ?></td>
                 <td><?php echo $row['last_name']; ?></td>
             </tr>
