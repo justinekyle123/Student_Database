@@ -8,8 +8,17 @@
     $con = connection();
     
     if(isset($_POST['login'])){
-        
-        $username = $_POST
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+     $sql = "SELECT * FROM student_users WHERE username = '$username' AND password = '$password' ";
+
+     $user = $con->query($sql) or die ($con->error);
+     $row = $user->fetch_assoc();
+
+    echo $total = $user->num_rows;
+
     }
 ?>
 
