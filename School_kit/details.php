@@ -6,7 +6,7 @@
     } 
 
     if(isset($_SESSION['Access']) && $_SESSION['Access'] == "admin"){
-        echo "welcome ".$_SESSION['UserLogin'];
+        echo "welcome ".$_SESSION['UserLogin']."<br>";
     }else{
        echo header("Location: index.php");
     }
@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="edit.php?ID = <?php echo $row['id'];?>">edit</a>
+    <a href="delete.php">delete</a>
+
+
     <h2><?php echo $row['first_name'];?> <?php echo $row['last_name'];?></h2>
 </body>
 </html>
