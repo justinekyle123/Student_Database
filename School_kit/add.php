@@ -4,6 +4,15 @@
     
     $con = connection();
 
+    if(isset($_POST['submit'])){
+        $fname =  $_POST['first_name'];
+        $lname =  $_POST['last_name'];
+        $gender =  $_POST['gender'];
+
+        $sql = "INSERT INTO `student_list`(`first_name`, `last_name`,`gender`) VALUES ('','','')";
+
+    }
+
 ?>
 
 
@@ -18,5 +27,21 @@
 </head>
 <body>
    
+    <form action="" method="post">
+        <label for="">First Name</label>
+        <input type="text" name="first_name" id="search">
+
+        <label for="">Last Name</label>
+        <input type="text" name="last_name" id="search">
+
+        <label for="">Gender</label>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <input type="submit" name="submit" value="submit form">
+    </form>
+
 </body>
 </html>
